@@ -54,7 +54,7 @@ echo -e "${GREEN}intel_pstate Status:${RESET}"
 cat /sys/devices/system/cpu/intel_pstate/status
 
 echo
-echo -e "${GREEN}Done! System is now running in PERFORMANCE mode ⚡${RESET}"
+echo -e "${GREEN}Done! System is now running in PERFORMANCE mode${RESET}"
 
 echo
 read -p "Press ENTER to close..."
