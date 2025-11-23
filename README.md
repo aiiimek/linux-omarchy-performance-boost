@@ -8,8 +8,6 @@
 A minimal, clean and effective performance-boosting script for Linux (especially Hyprland / Wayland setups).  
 It disables system-level power saving and forces the CPU into **PERFORMANCE mode** for better responsiveness.
 
----
-
 ## Features
 
 - Forces CPU governor → **performance**
@@ -21,14 +19,9 @@ It disables system-level power saving and forces the CPU into **PERFORMANCE mode
 - Ready `.desktop` launcher support
 - Fully XDG-compliant installation
 
-
-## 🖼️ Screenshot
-
+## Screenshot
 
 ![screenshot](./assets/screenshot-boost.png)
-
-
-
 
 
 ## Installation
@@ -38,6 +31,7 @@ Clone the repo:
 ```bash
 git clone https://github.com/YOURNAME/linux-omarchy-performance-boost
 cd linux-omarchy-performance-boost
+```
 
 Install the script:
 
