@@ -28,13 +28,13 @@ It disables system-level power saving and forces the CPU into **PERFORMANCE mode
 ## Quick Install (One Command)
 
 ```bash
-git clone https://github.com/aimek/linux-omarchy-performance-boost.git && cd linux-omarchy-performance-boost && chmod +x install.sh && ./install.sh
+git clone https://github.com/aiiimek/linux-omarchy-performance-boost.git && cd linux-omarchy-performance-boost && chmod +x install.sh && ./install.sh
 ```
 
 **Or step by step:**
 
 ```bash
-git clone https://github.com/aimek/linux-omarchy-performance-boost.git
+git clone https://github.com/aiiimek/linux-omarchy-performance-boost.git
 cd linux-omarchy-performance-boost
 chmod +x install.sh
 ./install.sh
