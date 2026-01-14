@@ -1,4 +1,4 @@
-#  Linux Omarchy Performance Boost
+# Linux Omarchy Performance Boost
 
 ![Shell](https://img.shields.io/badge/language-shell-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
@@ -23,44 +23,106 @@ It disables system-level power saving and forces the CPU into **PERFORMANCE mode
 
 ![screenshot](./assets/screenshot-boost.png)
 
+---
 
-## Installation
-
-Clone the repo:
+## Quick Install (One Command)
 
 ```bash
-git clone https://github.com/YOURNAME/linux-omarchy-performance-boost
-cd linux-omarchy-performance-boost
+git clone https://github.com/aimek/linux-omarchy-perfomance-boost.git && cd linux-omarchy-perfomance-boost && chmod +x install.sh && ./install.sh
 ```
 
-Install the script:
+**Or step by step:**
 
-mkdir -p ~/.local/bin
-cp boost.sh ~/.local/bin/boost
-chmod +x ~/.local/bin/boost
+```bash
+git clone https://github.com/aimek/linux-omarchy-perfomance-boost.git
+cd linux-omarchy-perfomance-boost
+chmod +x install.sh
+./install.sh
+```
 
-Test:
+---
+
+## Usage
+
+After installation, you can use the app in two ways:
+
+### Terminal
+```bash
 boost
+```
 
-
-Install the App Launcher (Walker, Wofi, Anyrun, KDE, GNOME)
-
-Install the icon:
-
-mkdir -p ~/.local/share/icons
-cp icons/boost.png ~/.local/share/icons/boost.png
-
-
-Install the launcher:
-
-cp .desktop/boost-performance.desktop ~/.local/share/applications/
-
-
-Optional refresh:
-
-update-desktop-database ~/.local/share/applications 2>/dev/null
-
-
-Now open your launcher (Super + Space in Walker) and type:
-
+### App Launcher
+Open your launcher (Walker, Wofi, Anyrun, Rofi, KDE, GNOME) and search for:
+```
 Boost Performance
+```
+
+---
+
+## Uninstall
+
+```bash
+cd linux-omarchy-perfomance-boost
+./uninstall.sh
+```
+
+Or manually:
+```bash
+rm ~/.local/bin/boost
+rm ~/.local/share/icons/boost.png
+rm ~/.local/share/applications/boost-performance.desktop
+```
+
+---
+
+## What Gets Installed
+
+| File | Location |
+|------|----------|
+| `boost` (script) | `~/.local/bin/boost` |
+| `boost.png` (icon) | `~/.local/share/icons/boost.png` |
+| `boost-performance.desktop` | `~/.local/share/applications/` |
+
+---
+
+## Requirements
+
+- Linux (tested on Arch, Fedora, Ubuntu)
+- `sudo` access (for changing CPU governor)
+- Intel CPU with `intel_pstate` driver (optional, script works without it too)
+
+---
+
+## What the Script Does
+
+1. **Disables `power-profiles-daemon`** - Stops the power management daemon that may override CPU settings
+2. **Sets `intel_pstate` to passive** - Allows manual governor control on Intel CPUs
+3. **Sets CPU governor to `performance`** - Forces all CPU cores to run at maximum frequency
+
+>  **Note:** These changes are temporary and will reset after reboot. Run the script again after each boot if needed.
+
+---
+
+## What Problem Does This Solve?
+
+On many Linux laptops with Intel CPUs, the power profile is stuck on **power-save mode** by default — even when plugged in. This causes:
+
+- **Sluggish performance** during demanding tasks
+- **Lower CPU frequencies** than your hardware can handle
+- **Frustrating lag** in games, video editing, or compilation
+
+The `power-profiles-daemon` and default kernel settings prioritize battery life over performance, which makes sense for mobile use — but not when you need raw power.
+
+**This script fixes that** by forcing your CPU into maximum performance mode with a single command.
+
+---
+
+## License
+
+MIT License - see [LICENSE](LICENSE)
+
+---
+
+## Contributing
+
+Pull requests are welcome! Feel free to improve the script or add support for AMD CPUs.

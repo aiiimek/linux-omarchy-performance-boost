@@ -1,8 +1,9 @@
 [Desktop Entry]
 Name=Boost Performance
-Comment=Force performance CPU governor
-Exec=/path/to/boost.sh
-Icon=/path/to/lightning.png
+Comment=Force performance CPU governor for maximum speed
+Exec=boost
+Icon=boost
 Terminal=true
 Type=Application
-Categories=System;
+Categories=System;Utility;
+Keywords=performance;cpu;boost;speed;governor;
